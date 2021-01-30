@@ -1,2 +1,3 @@
 # DemoTestsExamples
-Some tests examples using java, selenide, allure
+Some tests examples
+stack: Java / Gradle / JUnit5 / Selenide / Allure / Selenoid

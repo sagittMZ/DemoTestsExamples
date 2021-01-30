@@ -51,18 +51,10 @@ public class SomeTests extends TestBase{
             open("https://avionero.ru/"+destination+".MOW?adults=2");
         });
         step("Set destination", ()-> $(by("data-cy","to-input")).parent().click());
-        step("Go to 'Show more' options", ()-> {
-            $(byText("Показать еще...")).click();
-        });
-        step("Set 'Asia' as an option", ()-> {
-            $(byText("Азия")).click();
-        });
-        step("Set 'Island' as an option", ()-> {
-            $(byText("Остров")).click();
-        });
-        step("Set 'Surf' as an option", ()-> {
-            $(byText("Серфинг")).click();
-        });
+        step("Go to 'Show more' options", ()-> $(byText("Показать еще...")).click());
+        step("Set 'Asia' as an option", ()-> $(byText("Азия")).click());
+        step("Set 'Island' as an option", ()-> $(byText("Остров")).click());
+        step("Set 'Surf' as an option", ()-> $(byText("Серфинг")).click());
     }
 
     @Test
@@ -75,23 +67,15 @@ public class SomeTests extends TestBase{
             String destination = "Москва-"+ this.destination;
             open("https://avionero.ru/"+destination+".MOW-A?adults=2&destination-themes=island%2Csurfing");
         });
-        step("Go to calendar", ()-> {
-            $(by("data-cy","calendars-input")).click();
-        });
-        step("Set 'flex date' as an option", ()-> {
-            $(byText("Гибкие даты")).click();
-        });
+        step("Go to calendar", ()-> $(by("data-cy","calendars-input")).click());
+        step("Set 'flex date' as an option", ()-> $(byText("Гибкие даты")).click());
         step("Set start date", ()-> {
-            //yep, this is really requared )))
+            //yep, this is really required )))
             $x("//div[@data-cy='first_calendar-panel']//div[@class='calendar']/div[8]").scrollIntoView(false);
             $(by("data-cy","month-8-name")).click();
         });
-        step("Set 'one-way ticket' as an option", ()-> {
-            $(byText("Обратный билет не нужен")).parent().click();
-        });
-        step("Check search is successful", ()-> {
-            $(byText("Рекомендованные билеты")).parent().click();
-        });
+        step("Set 'one-way ticket' as an option", ()-> $(byText("Обратный билет не нужен")).parent().click());
+        step("Check search is successful", ()-> $(byText("Рекомендованные билеты")).parent().click());
     }
 
     @Test
@@ -107,24 +91,14 @@ public class SomeTests extends TestBase{
             String destination = "Москва-"+ this.destination;
             open("https://avionero.ru/"+destination+".MOW-A?adults=2&destination-themes=island%2Csurfing");
         });
-        step("Go to calendar", ()-> {
-            $(by("data-cy","calendars-input")).click();
-        });
-        step("Set 'flex date' as an option", ()-> {
-            $(byText("Точные даты")).click();
-        });
-        step("Set start date", ()-> {
-            $(by("data-cy","month-"+MonthNumber))
-                    .$(".calendar__number",dayOfMonth)
-                    .parent()
-                    .click();
-        });
-        step("Set 'one-way ticket' as an option", ()-> {
-            $(byText("Обратный билет не нужен")).parent().click();
-        });
-        step("Check search is successful", ()-> {
-            $(byText("Рекомендованные билеты")).parent().click();
-        });
+        step("Go to calendar", ()-> $(by("data-cy","calendars-input")).click());
+        step("Set 'flex date' as an option", ()-> $(byText("Точные даты")).click());
+        step("Set start date", ()-> $(by("data-cy","month-"+MonthNumber))
+                .$(".calendar__number",dayOfMonth)
+                .parent()
+                .click());
+        step("Set 'one-way ticket' as an option", ()-> $(byText("Обратный билет не нужен")).parent().click());
+        step("Check search is successful", ()-> $(byText("Рекомендованные билеты")).parent().click());
     }
 
     @Test
@@ -138,9 +112,7 @@ public class SomeTests extends TestBase{
             String destination = "Москва-"+ this.destination;
             open("https://avionero.ru/"+destination+".MOW-A?departure="+flyDate+"&adults=2&destination-themes=island%2Csurfing");
         });
-        step("Click for 'Recommended tickets' snippet", ()-> {
-            $(by("data-cy","flightsPageHeader")).sibling(0).click();
-        });
+        step("Click for 'Recommended tickets' snippet", ()-> $(by("data-cy","flightsPageHeader")).sibling(0).click());
         step("Check popup is showed", ()-> {
             $(byText("Как мы рекомендуем билеты")).shouldBe(Condition.visible);
         });
