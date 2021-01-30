@@ -51,5 +51,6 @@ allure {
 }
 
 test {
+    systemProperties = System.properties
     useJUnitPlatform()
 }

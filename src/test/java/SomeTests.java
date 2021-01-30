@@ -128,7 +128,7 @@ public class SomeTests extends TestBase{
     }
 
     @Test
-    @DisplayName("Set destination options")
+    @DisplayName("Check tickets snippet")
     @Feature("Avionero project")
     @Link(url="https://Avionero.ru", name ="RUS")
     @Owner("s_a_g_i_t_t")
