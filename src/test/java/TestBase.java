@@ -26,9 +26,8 @@ public class TestBase {
           //    systemProperties = System.properties
           //    useJUnitPlatform()
           //}
-        //Configuration.remote = "https://user1:1234@"+System.getProperty("remote.browser.url") +":4444/wd/hub/";
+        Configuration.remote = "https://user1:1234@"+System.getProperty("remote.browser.url") +":4444/wd/hub/";
 
-       // Configuration.remote = "wait url from devops";
         Configuration.browserVersion = "87.0";
         Configuration.startMaximized = true;
     }
