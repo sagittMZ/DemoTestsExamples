@@ -23,8 +23,8 @@ ext {
     junitVersion = "5.7.0"
 }
 dependencies {
-            /*compile ("org.aeonbits.owner:owner:1.0.12")*/
-            compile("com.codeborne:selenide:${selenideVersion}")
+            /*compile ("org.aeonbits.owner:owner:1.0.12")
+            compile("com.codeborne:selenide:${selenideVersion}")*/
             compile("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
             compile("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
             compile("org.junit.jupiter:junit-jupiter-params:${junitVersion}")
@@ -36,6 +36,8 @@ dependencies {
             compile("ch.qos.logback:logback-classic:1.2.3")
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${junitVersion}"
     implementation("org.aeonbits.owner:owner-java8:1.0.12")
+    implementation("com.codeborne::${selenideVersion}")
+
 
 }
 
