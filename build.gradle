@@ -52,3 +52,10 @@ test {
     systemProperties = System.properties
     useJUnitPlatform()
 }
+
+    task amazon_tests(type: Test) {
+        useJUnitPlatform {
+            includeTags 'Amazon'
+            excludeTags 'Skip'
+        }
+    }
