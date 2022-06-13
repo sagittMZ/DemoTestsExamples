@@ -23,7 +23,7 @@ ext {
     junitVersion = "5.7.0"
 }
 dependencies {
-            compile ("org.aeonbits.owner:owner:1.0.12")
+            /*compile ("org.aeonbits.owner:owner:1.0.12")*/
             compile("com.codeborne:selenide:${selenideVersion}")
             compile("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
             compile("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
@@ -35,6 +35,8 @@ dependencies {
             compile("com.github.javafaker:javafaker:1.0.2")
             compile("ch.qos.logback:logback-classic:1.2.3")
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${junitVersion}"
+    implementation("org.aeonbits.owner:owner-java8:1.0.12")
+
 }
 
 tasks.withType(JavaCompile) {
