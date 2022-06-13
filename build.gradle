@@ -41,6 +41,10 @@ dependencies {
     "org.junit.jupiter:junit-jupiter-engine:${junitVersion},
     "org.junit.jupiter:junit-jupiter-params:${junitVersion}",
     "io.qameta.allure:allure-selenide:${allureVersion}",
+    "org.aspectj:aspectjweaver:1.9.6",
+    "org.xerial:sqlite-jdbc:3.34.0",
+    "com.github.javafaker:javafaker:1.0.2",
+    "org.postgresql:postgresql:42.2.18",
     "ch.qos.logback:logback-classic:1.2.3",
     "com.codeborne::${selenideVersion}")
 
