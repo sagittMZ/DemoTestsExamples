@@ -56,6 +56,9 @@ test {
     useJUnitPlatform()
 }
 
+configurations {
+    testCompile
+}
     task amazon_tests(type: Test) {
         useJUnitPlatform {
             includeTags 'Amazon'
