@@ -77,7 +77,7 @@ public class AmazonTests extends TestBase{
     public void demoAmazonSkip() {
         step("Open site url", ()-> open(siteUrl));
 
-        step("Click on the hamburger menu in the top left corner", ()-> {
+        step("Just for tags using", ()-> {
             //do nothing, just for skip example
         });
     }
