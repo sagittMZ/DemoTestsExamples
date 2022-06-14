@@ -2,6 +2,8 @@ package configs;
 
 import org.aeonbits.owner.Config;
 
+import java.net.URL;
+
 @Config.LoadPolicy(Config.LoadType.MERGE)  //если FIRST, то берет данные из первого варианта,
 //если MERGE, то подтягивает из следующих, по необходимости
 @Config.Sources({
@@ -28,6 +30,18 @@ public interface ExampleConfig extends Config {
     @DefaultValue("blablabla")
     @Key("user_node")
     String user_node();
+
+    @Key("selenoid_user")
+    String selenoid_user();
+
+    @Key("selenoid_password")
+    String selenoid_password();
+
+    @Key("remote_browser_url")
+    String remote_browser_url();
+
+    @Key("site_url")
+    URL site_url();
 
 
 

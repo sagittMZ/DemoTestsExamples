@@ -23,32 +23,21 @@ ext {
     junitVersion = "5.7.0"
 }
 dependencies {
-            /*compile ("org.aeonbits.owner:owner:1.0.12")
-            compile("com.codeborne:selenide:${selenideVersion}")
-            compile("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
-            compile("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
-            compile("org.junit.jupiter:junit-jupiter-params:${junitVersion}")
-            compile("org.aspectj:aspectjweaver:1.9.6")
-            compile("io.qameta.allure:allure-selenide:${allureVersion}")
-            compile("org.xerial:sqlite-jdbc:3.34.0")
-            compile("org.postgresql:postgresql:42.2.18")
-            compile("com.github.javafaker:javafaker:1.0.2")
-            compile("ch.qos.logback:logback-classic:1.2.3")*/
-            
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${junitVersion}"
-    implementation("org.aeonbits.owner:owner-java8:1.0.12",
-    "org.junit.jupiter:junit-jupiter-api:${junitVersion}",
-    "org.junit.jupiter:junit-jupiter-engine:${junitVersion},
-    "org.junit.jupiter:junit-jupiter-params:${junitVersion}",
-    "io.qameta.allure:allure-selenide:${allureVersion}",
-    "org.aspectj:aspectjweaver:1.9.6",
-    "org.xerial:sqlite-jdbc:3.34.0",
-    "com.github.javafaker:javafaker:1.0.2",
-    "org.postgresql:postgresql:42.2.18",
-    "ch.qos.logback:logback-classic:1.2.3",
-    "com.codeborne::${selenideVersion}")
-
-
+    implementation("org.aeonbits.owner:owner:1.0.12",
+            "org.junit.jupiter:junit-jupiter-api:${junitVersion}",
+            "org.junit.jupiter:junit-jupiter-engine:${junitVersion}",
+            "org.junit.jupiter:junit-jupiter-params:${junitVersion}",
+            "io.qameta.allure:allure-selenide:${allureVersion}",
+            "org.aspectj:aspectjweaver:1.9.6",
+            "org.xerial:sqlite-jdbc:3.34.0",
+            "com.github.javafaker:javafaker:1.0.2",
+            "org.postgresql:postgresql:42.2.18",
+            "ch.qos.logback:logback-classic:1.2.3",
+            "io.qameta.allure:allure-java-commons:2.13.5",
+            "io.qameta.allure:allure-rest-assured:2.13.5",
+            "io.rest-assured:rest-assured:4.2.0",
+            "com.codeborne:selenide:${selenideVersion}")
 }
 
 tasks.withType(JavaCompile) {
@@ -63,7 +52,7 @@ allure {
 }
 
 test {
-    systemProperties = System.properties
+   // systemProperties = System.properties
     useJUnitPlatform()
 }
 
