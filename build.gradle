@@ -5,8 +5,6 @@ buildscript {
     }
 }
 plugins {
-    id 'java'
-    id 'application'
     id 'java-library'
     id 'io.qameta.allure' version '2.9.6'
 }
