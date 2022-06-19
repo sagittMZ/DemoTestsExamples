@@ -30,15 +30,9 @@ public class TestBase {
         capabilities.setCapability("enableVideo", true);
 
         Configuration.browserCapabilities = capabilities;
-          //command to run: gradle test -Dremote.browser.url=selenoid.autotests.cloud + requared add to build.gradle in test part this:
-          //test {
-          //    systemProperties = System.properties
-          //    useJUnitPlatform()
-          //}
         Configuration.remote = "https://"+ selenoid_user+":"+ selenoid_password+"@"+remote_browser_url+"/wd/hub/";  //так же можно это указывать в параметрах джобы дженкинс
-
+        Configuration.browserSize="1366x768";
         Configuration.browserVersion = "100.0";
-        Configuration.startMaximized = true;
     }
 
     @AfterEach
