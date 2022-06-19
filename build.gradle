@@ -18,11 +18,9 @@ repositories {
     mavenCentral()
 }
 
-ext {
-    allureVersion = "2.17.3"
-    selenideVersion = "6.5.0"
+def allureVersion = "2.17.3",
+    selenideVersion = "6.5.0",
     junitVersion = "5.8.2"
-}
 
 allure {
     report {
@@ -37,6 +35,7 @@ allure {
         }
     }
 }
+
 
 dependencies {
     implementation("org.aeonbits.owner:owner:1.0.12",
@@ -60,6 +59,8 @@ dependencies {
 
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
 }
 
 allure {
