@@ -35,10 +35,12 @@ public class AttachmentsHelper {
         return "<html><body><video width='100%' height='100%' controls autoplay><source src='"
                 + getVideoUrl()
                 + "' type='video/mp4'></video></body></html>";
+
     }
 
     public static String getVideoUrl() {
-        return "https://" + System.getProperty("remote.browser.url") + "/video/" + getSessionId() + ".mp4";
+        System.out.println("video url is: https://" + System.getProperty("remote_browser_url") + "/video/" + getSessionId() + ".mp4");
+        return "https://" + System.getProperty("remote_browser_url") + "/video/" + getSessionId() + ".mp4";
 
     }
 
