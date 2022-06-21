@@ -6,6 +6,8 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
@@ -38,9 +40,18 @@ public class AttachmentsHelper {
 
     }
 
-    public static String getVideoUrl() {
-        System.out.println("video url is: https://" + System.getProperty("remote_browser_url") + "/video/" + getSessionId() + ".mp4");
-        return "https://" + System.getProperty("remote_browser_url") + "/video/" + getSessionId() + ".mp4";
+    public static URL getVideoUrl() {
+        /*System.out.println("video url is: https://" + System.getProperty("remote_browser_url") + "/video/" + getSessionId() + ".mp4");
+        return "https://" + System.getProperty("remote_browser_url") + "/video/" + getSessionId() + ".mp4";*/
+        String videoUrl = "https://selenoid.autotests.cloud/video/" + getSessionId() + ".mp4";
+
+
+        try {
+            return new URL(videoUrl);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+        return null;
 
     }
 
