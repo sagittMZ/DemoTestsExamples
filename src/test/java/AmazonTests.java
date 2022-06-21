@@ -1,5 +1,3 @@
-import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.Selenide;
 import configs.ExampleConfig;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
@@ -8,21 +6,19 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
+import utils.BaseMethods;
 
 import java.net.URL;
 
-import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
 
 public class AmazonTests extends TestBase{
     //TODO Note: Clicking on above URL may redirect you to amazon.com. Change it to amazon.in
-
     ExampleConfig config = ConfigFactory.newInstance().create(ExampleConfig.class);
     URL siteUrl= config.site_url();
-
+    BaseMethods baseMethods = new BaseMethods();
 
     @Test
     @DisplayName("AmazonTests")
@@ -31,6 +27,10 @@ public class AmazonTests extends TestBase{
     @Owner("s_a_g_i_t_t")
     public void demoAmazon() {
         step("Open site url", ()-> open(siteUrl));
+
+        step("Check redirect to *.com", ()-> {
+           baseMethods.checkMainPageRedirect();
+        });
 
         step("Click on the hamburger menu in the top left corner", ()-> {
             //do smth
