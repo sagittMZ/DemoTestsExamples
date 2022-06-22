@@ -16,6 +16,7 @@ import static org.openqa.selenium.logging.LogType.BROWSER;
 
 public class AttachmentsHelper {
 
+
     @Attachment(value = "{attachName}", type = "text/plain")
     public static String attachAsText(String attachName, String message) {
         return message;
@@ -39,10 +40,9 @@ public class AttachmentsHelper {
                 + "' type='video/mp4'></video></body></html>";
 
     }
-
+    //TODO preparing system property to test run
     public static URL getVideoUrl() {
-        /*System.out.println("video url is: https://" + System.getProperty("remote_browser_url") + "/video/" + getSessionId() + ".mp4");
-        return "https://" + System.getProperty("remote_browser_url") + "/video/" + getSessionId() + ".mp4";*/
+        /*String videoUrl = "https://" + System.getProperty("remote_browser_url") + "/video/" + getSessionId() + ".mp4";*/
         String videoUrl = "https://selenoid.autotests.cloud/video/" + getSessionId() + ".mp4";
 
 

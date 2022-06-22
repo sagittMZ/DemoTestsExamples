@@ -1,3 +1,4 @@
+import components.HamburgerMenu;
 import configs.ExampleConfig;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
@@ -10,7 +11,7 @@ import utils.BaseMethods;
 
 import java.net.URL;
 
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
 
@@ -19,6 +20,7 @@ public class AmazonTests extends TestBase{
     ExampleConfig config = ConfigFactory.newInstance().create(ExampleConfig.class);
     URL siteUrl= config.site_url();
     BaseMethods baseMethods = new BaseMethods();
+    HamburgerMenu hamburgerMenu = new HamburgerMenu();
 
     @Test
     @DisplayName("AmazonTests")
@@ -33,11 +35,12 @@ public class AmazonTests extends TestBase{
         });
 
         step("Click on the hamburger menu in the top left corner", ()-> {
-            //do smth
+            $("#nav-hamburger-menu").click();
         });
 
         step("Scroll own and then Click on the TV, Appliances and Electronics link under Shop by Department section.", ()-> {
-            //do smth
+            hamburgerMenu.scrollToMainMenuElement("shop by department");
+            hamburgerMenu.clickToMainMenuElement("shop by department","TV, Appliances, Electronics");
         });
 
         step("Then click on Televisions under Tv, Audio & Cameras sub section.", ()-> {
