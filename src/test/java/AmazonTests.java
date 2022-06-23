@@ -44,7 +44,7 @@ public class AmazonTests extends TestBase{
         });
 
         step("Then click on Televisions under Tv, Audio & Cameras sub section.", ()-> {
-            //do smth
+            hamburgerMenu.clickToSubMainMenuElement("tv, audio & cameras","Televisions");
         });
 
         step("Scroll down and filter the results by Brand ‘Samsung’.", ()-> {

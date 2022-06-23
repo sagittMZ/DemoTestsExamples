@@ -17,11 +17,17 @@ public class HamburgerMenu {
         $(byText(menuItem)).scrollIntoView("{block: \"center\"}");
 
     }
-
+    //TODO use more user friendly locator :))
     @Step("Click to main menu element in certain block")
     public void clickToMainMenuElement(String menuItem, String menuSubItem) {
         $("#hmenu-content").hover();
         $x("//div[@class='hmenu-item hmenu-title '][contains(text(), '"+menuItem+"')]/following::div[contains(text(), '"+menuSubItem+"')]").click();
+    }
+
+    @Step("Click to main menu element in certain block")
+    public void clickToSubMainMenuElement(String subMenuItem, String subMenuSubItem) {
+        $("#hmenu-content").hover();
+        $x("//div[@class='hmenu-item hmenu-title '][contains(text(), '"+subMenuItem+"')]/following::a[contains(text(), '"+subMenuSubItem+"')]").click();
     }
 }
 
