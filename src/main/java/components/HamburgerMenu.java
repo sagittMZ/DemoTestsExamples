@@ -24,7 +24,7 @@ public class HamburgerMenu {
         $x("//div[@class='hmenu-item hmenu-title '][contains(text(), '"+menuItem+"')]/following::div[contains(text(), '"+menuSubItem+"')]").click();
     }
 
-    @Step("Click to main menu element in certain block")
+    @Step("Click to submain menu element in certain block")
     public void clickToSubMainMenuElement(String subMenuItem, String subMenuSubItem) {
         $("#hmenu-content").hover();
         $x("//div[@class='hmenu-item hmenu-title '][contains(text(), '"+subMenuItem+"')]/following::a[contains(text(), '"+subMenuSubItem+"')]").click();
