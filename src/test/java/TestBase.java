@@ -30,7 +30,7 @@ public class TestBase {
         capabilities.setCapability("enableVideo", true);
 
         Configuration.browserCapabilities = capabilities;
-        Configuration.remote = "https://"+ selenoid_user+":"+ selenoid_password+"@"+remote_browser_url+"/wd/hub/";  //так же можно это указывать в параметрах джобы дженкинс
+        //Configuration.remote = "https://"+ selenoid_user+":"+ selenoid_password+"@"+remote_browser_url+"/wd/hub/";  //u also can use is in jenkins job
         Configuration.browserSize="1366x768";
         Configuration.browserVersion = "100.0";
     }

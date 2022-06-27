@@ -1,3 +1,4 @@
+import com.codeborne.selenide.Selenide;
 import components.HamburgerMenu;
 import configs.ExampleConfig;
 import io.qameta.allure.Feature;
@@ -56,19 +57,15 @@ public class AmazonTests extends TestBase{
         });
 
         step("Click on the second highest priced item (whatever that maybe at the time of automating).", ()-> {
-            //do smth
+            hamburgerMenu.clickToCertainSearchResultItem(1);
         });
 
-        step("Click on the second highest priced item (whatever that maybe at the time of automating).", ()-> {
-            //do smth
-        });
-
-/*        step("Switch the Window", ()-> {
+        step("Switch the Window", ()-> {
             Selenide.switchTo().window(1);
-        });*/
+        });
 
         step("Assert that “About this item” section is present and log this section text to console/report.", ()-> {
-            //do smth
+            hamburgerMenu.checkBlockHaveText("About this item");
         });
     }
 
@@ -81,7 +78,7 @@ public class AmazonTests extends TestBase{
         step("Open site url", ()-> open(siteUrl));
 
         step("Just for tags using", ()-> {
-            //do nothing, just for skip example
+            //this test do nothing, just for skip tag example
         });
     }
 

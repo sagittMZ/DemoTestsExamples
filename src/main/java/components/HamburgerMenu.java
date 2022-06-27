@@ -1,9 +1,11 @@
 package components;
 
 
+import com.codeborne.selenide.ElementsCollection;
 import io.qameta.allure.Step;
 
-import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byAttribute;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
@@ -14,7 +16,8 @@ public class HamburgerMenu {
            SUB_MAIN_MENU_ITEM = "')]/following::div[contains(text(), '",
            SUB_SUB_MENU_ITEM = "')]/following::a[contains(text(), '",
            LEFT_MAIN_FILTERS_BLOCK_NAME = "//span[@class='a-size-base a-color-base a-text-bold'][contains(text(), '",
-           LEFT_MAIN_FILTER_NAME= "//span[@class='a-size-base a-color-base'][contains(text(), '";
+           LEFT_MAIN_FILTER_NAME= "//span[@class='a-size-base a-color-base'][contains(text(), '",
+           ABOUT_PRODUCT_FEATURES = "#feature-bullets";
 
     @Step("Scroll to main menu element")
     public void scrollToMainMenuElement(String menuItem){
@@ -46,5 +49,17 @@ public class HamburgerMenu {
         $(byAttribute("data-value","{\"stringVal\":\"price-desc-rank\"}")).click();
         $(".a-dropdown-prompt").shouldHave(text(sortType));
     }
-}
 
+    @Step("Click on the certain num of priced item in search result")
+    public void clickToCertainSearchResultItem(Integer searchResultItemNumber) {
+        ElementsCollection searchResults = $$(byAttribute("data-component-type","s-search-result"));
+        System.out.println("searchResultAmount - " + $$(searchResults).size());
+        $$(searchResults).get(1).click();
+    }
+    @Step("Assert block 'About this item' is exist")
+    public void checkBlockHaveText(String requiredText) {
+        $(ABOUT_PRODUCT_FEATURES).shouldHave(text(requiredText));
+        String existingText = $(ABOUT_PRODUCT_FEATURES).$("h1").getText();
+        System.out.println("existingText is:"+existingText);
+    }
+}
