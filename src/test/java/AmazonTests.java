@@ -22,6 +22,8 @@ public class AmazonTests extends TestBase{
     URL siteUrl= config.site_url();
     BaseMethods baseMethods = new BaseMethods();
     HamburgerMenu hamburgerMenu = new HamburgerMenu();
+    /**For this example i use exact data for tests steps directly. U also can use property files for that purpose or declare data here.
+     * Or even use some auto generate data*/
 
     @Test
     @DisplayName("AmazonTests")
