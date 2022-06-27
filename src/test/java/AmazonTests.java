@@ -48,11 +48,11 @@ public class AmazonTests extends TestBase{
         });
 
         step("Scroll down and filter the results by Brand ‘Samsung’.", ()-> {
-            //do smth
+            hamburgerMenu.scrollToCertainFiltersBlockAndSelectFilter("Brands","Samsung");
         });
 
         step("Sort the Samsung results with price High to Low.", ()-> {
-            //do smth
+            hamburgerMenu.sortResultsFromHighToLow("Price: High to Low");
         });
 
         step("Click on the second highest priced item (whatever that maybe at the time of automating).", ()-> {
