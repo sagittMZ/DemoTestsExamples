@@ -1,4 +1,4 @@
-## DemoTestsExamples - easy scalable example of UI tests framewwork
+## DemoTestsExamples - easy scalable example of UI tests framework
 
 # Amazon tests example </br>
 stack: Java / Gradle / JUnit5 / Selenide / Allure / Selenoid / Telegram notification  </br>
